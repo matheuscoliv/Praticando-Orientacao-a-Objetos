@@ -1,9 +1,7 @@
-package conceitos.encapsulamento;
+package conceitos.classesabstrataseinterfaces;
 
-public class Funcionario {
+public abstract class Funcionario {
     protected String nome;
-
-    private String cargo;
 
     public String getNome() {
         return nome;
@@ -11,14 +9,6 @@ public class Funcionario {
 
     public double getSalario() {
         return salario;
-    }
-
-    public String getCargo() {
-        return cargo;
-    }
-
-    public void setCargo(String cargo) {
-        this.cargo = cargo;
     }
 
     public Funcionario(String nome, double salario) {
@@ -30,7 +20,7 @@ public class Funcionario {
 
 
     public void exibirInformacoes() {
-        System.out.printf("Funcionario %s - Cargo: %s salario %.2f\n", nome, cargo, salario);;
+        System.out.printf("Funcionario %s - Cargo: %s salario %.2f\n", nome, salario);;
     }
 
     public void reajustarSalario(double percentual) {
@@ -42,4 +32,7 @@ public class Funcionario {
         salario += 500;
         System.out.printf("Salario reajustado de %s para: %.2f\n", nome, salario);
     }
+
+    public abstract void calcularPLR();
 }
+
